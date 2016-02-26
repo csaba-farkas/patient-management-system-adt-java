@@ -1,10 +1,12 @@
 
 package main;
 
-import test.RandomPatientCreator;
 import controller.PatientController;
+import interfaces.PatientManagementInterface;
+import model.PatienLinkedtList;
 import model.Patient;
 import model.PatientArrayList;
+import test.RandomPatientCreator;
 import view.PatientManagementMenu;
 
 /**
@@ -30,8 +32,8 @@ public class PatientManagementApplication {
         RandomPatientCreator creator = new RandomPatientCreator();
         Patient patients[] = creator.createPatients();
         
-        //PatienLinkedtList list = new PatienLinkedtList();
-        PatientArrayList list = new PatientArrayList();
+        //PatientManagementInterface list = new PatienLinkedtList();
+        PatientManagementInterface list = new PatientArrayList();
         
         PatientController.getInstance().setDataStructure(list);
         
